@@ -1,0 +1,9 @@
+FROM centos:latest
+MAINTAINER yogeeswari2020
+RUN yum install -y httpd \
+zip \
+unzip
+ADD https://www.google.com/aclk?sa=L&ai=DChcSEwj075_Q8OD3AhVYj2gJHcf4BcgYABATGgJ3Zg&ae=2&ei=8Z2AYtvQFrGK5OUP-dGPqAw&sig=AOD64_2rxEKRaUHB9nzIDeoCT7akD0mEMg&q&sqi=2&adurl&ved=2ahUKEwibjZHQ8OD3AhUxBbkGHfnoA8UQ0Qx6BAgEEAE /var/www/html/
+WORKDIR /var/www/html
+CMD ["/usr/sbin/httpd", "-D","FOREGROUND"]
+EXPOSE 80
